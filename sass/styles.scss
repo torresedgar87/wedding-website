@@ -903,6 +903,12 @@ body.modal-open {
 /* ==========================================================================
 My Custom Stuff
 ========================================================================== */
-.imageRowPadding {
-  padding-bottom: 30px;
+@media screen {
+  .imageRowPadding {
+    padding-bottom: 30px;
+  }
+}
+
+.overrideParagraph {
+  padding-bottom: 0px;
 }
