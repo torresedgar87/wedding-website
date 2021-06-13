@@ -903,9 +903,18 @@ body.modal-open {
 /* ==========================================================================
 My Custom Stuff
 ========================================================================== */
-@media screen {
+.imageRowPadding {
+  padding-bottom: 30px;
+}
+
+@media screen 
+  and (max-width: 480px)
+  and (max-width: 640px)
+  and (max-width: 991px)
+  and (max-width: 1024px)
+  and (max-width: 1200px) {
   .imageRowPadding {
-    padding-bottom: 30px;
+    padding-bottom: 0px;
   }
 }
 
