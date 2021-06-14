@@ -240,7 +240,7 @@ $(document).ready(function () {
 /********************** Extras **********************/
 
 // Google map
-function initMap() {
+/*function initMap() {
     var location = {lat: 32.729684, lng: -117.1512285};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
@@ -266,7 +266,7 @@ function initBBSRMap() {
         position: la_fiesta,
         map: map
     });
-}
+}*/
 
 // alert_markup
 function alert_markup(alert_type, msg) {
