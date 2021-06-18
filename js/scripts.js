@@ -208,33 +208,6 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    /*$('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbwU4C2INsYyc88mSfgasYMqDnfxYXNoSaVn-ZuPaCOU6KkssIQUdZnQbiXl_N7ZVWMi/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });*/
-
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
@@ -256,7 +229,7 @@ $(document).ready(function () {
                 },
                 
                 success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
@@ -266,7 +239,7 @@ $(document).ready(function () {
                 },
                 
                 error: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 },
             });
@@ -276,35 +249,6 @@ $(document).ready(function () {
 });
 
 /********************** Extras **********************/
-
-// Google map
-/*function initMap() {
-    var location = {lat: 32.729684, lng: -117.1512285};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 32.729684, lng: -117.1512285};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
-}*/
 
 // alert_markup
 function alert_markup(alert_type, msg) {
