@@ -211,12 +211,11 @@ $(document).ready(function () {
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        console.log(data);
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbxym7qnjjZyn4blrEaCAphkgqIw4vJqKXNI_NlFAKJUuMYnMqNwePgCPlOro6mgiiS7/exec",
+            url: "https://script.google.com/macros/s/AKfycbzoP2fKSqF-jpq90op7H_H1xKaisoXQzo4KpEEnk3_8p3WxI4oxkZ7DvaOA3lkDecNj/exec",
             type: "POST",
             contentType: "application/x-www-form-urlencoded", 
             data: data,
@@ -241,6 +240,14 @@ $(document).ready(function () {
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
             },
         });
+    });
+
+    $('#attendingRadio').on('change', function(e){
+        $('#covidRulesAck').prop('required',true);
+    });
+
+    $('#notAttendingRadio').on('change', function(e){
+        $('#covidRulesAck').prop('required',false);
     });
 
 });
