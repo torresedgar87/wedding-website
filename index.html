@@ -447,6 +447,24 @@
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
+
+                    <div class="row">
+                        <div class="col-md-4 hidden-sm hidden-xs"></div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="">
+                                <input type="radio" name="attendance"  value="yes" required>
+                                <label for="attendance" class="covidrules">Attending</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="">
+                                <input type="radio" name="attendance" value="no" required>
+                                <label for="attendance" class="covidrules">Not attending</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 hidden-sm hidden-xs"></div>
+                    </div>  
+
                     <!-- Main Guest -->
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
@@ -473,7 +491,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-input-group">
-                                <input name="name2" class="" placeholder="Adult guest" required>
+                                <input name="name2" class="" placeholder="Adult guest">
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
@@ -497,7 +515,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-input-group">
-                                <input name="name3" class="" placeholder="Adult guest" required>
+                                <input name="name3" class="" placeholder="Adult guest">
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
@@ -519,7 +537,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-input-group">
-                                <input name="name4" class="" placeholder="Adult guest" required>
+                                <input name="name4" class="" placeholder="Adult guest">
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
@@ -538,21 +556,6 @@
                     </div>
 
                     <div class="row">
-                        <!--<div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="form-input-group">
-                                    <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Adult guest">
-                                </div>
-                            </div>
-                        </div>-->
                         <div class="col-md-12 col-sm-6">
                             <div class="">
                                 <input type="checkbox" name="covidrules" required>
