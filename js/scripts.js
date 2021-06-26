@@ -211,40 +211,36 @@ $(document).ready(function () {
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
+        console.log(data);
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbwU4C2INsYyc88mSfgasYMqDnfxYXNoSaVn-ZuPaCOU6KkssIQUdZnQbiXl_N7ZVWMi/exec",
-                type: "POST",
-                contentType: "application/x-www-form-urlencoded", 
-                data: data,
-                
-                complete: function() {
-                    //called when complete
-                },
-                
-                success: function(data) {
-                    //console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                    $('#rsvp-form').trigger('reset');
-                },
-                
-                error: function(data) {
-                    //console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                },
-            });
-        }
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxym7qnjjZyn4blrEaCAphkgqIw4vJqKXNI_NlFAKJUuMYnMqNwePgCPlOro6mgiiS7/exec",
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded", 
+            data: data,
+            
+            complete: function() {
+                //called when complete
+            },
+            
+            success: function(data) {
+                //console.log(data);
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+                $('#rsvp-form').trigger('reset');
+            },
+            
+            error: function(data) {
+                //console.log(data);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+            },
+        });
     });
 
 });
