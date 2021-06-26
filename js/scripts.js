@@ -236,6 +236,7 @@ $(document).ready(function () {
                         $('#alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
                     }
+                    $('#rsvp-form').trigger('reset');
                 },
                 
                 error: function(data) {
